@@ -116,7 +116,7 @@ print(sum)
 ----------------------------------------------------------------------------------------------------------
 ### 3 aralık (vize sonrası 3. hafta)
 ------------------------------------
-** Data Warehousing(Veri Ambarı) **
+**Data Warehousing(Veri Ambarı)**
 - Büyük veri merkezindeki veri tabanındaki bir çok kaynaktan veriler bulunur.
 - "sql" ve "tsbleau" kullanılır sorgular için.(tableau verileri görsellleştirmek için kullanılıır.)
 - Veri kaynaklarnı sürekli kılmak çok iş ve emek ister.
@@ -125,7 +125,7 @@ print(sum)
 - Ölçeklendirme zor.
 - Analiz edilecek verilerin aktarıldığı yerdir veri ambarı.
 -----------------------------------------------------------
-** ETL Extract, Transform , Load(klasik yaklaşım) **
+**ETL Extract, Transform , Load(klasik yaklaşım)**
 - ETL ve ELT verilerin bir veri ambarı içerisinden nasıl geldiğini ifade eder.
 - ETL geleneksel(klasik yaklaşım) dir.
 - Operasyonlar sistemlerde gelen ham verileri periyodik olarak çıkarmak.
@@ -133,7 +133,7 @@ print(sum)
 - Son olarak dönüştürülen veriler şemaya dönüştürür.
 - Büyük verilerde dünüştürme işlemi büyük bir soruna dönüşebilir.
 ---------------------------------------------------------------
-** ELT extract load transfırm(günümüzde çok fazla veri varsa kulanılandır.) **
+**ELT extract load transfırm(günümüzde çok fazla veri varsa kulanılandır.)**
 - Big data için tek seçenek oracle değildir.
 - Büyük verilerde işlem yaparken kırılganlığı(yablış yazmış olabilirim :D) önlemek için kullanılır.
 - Hive gibi teknolojiler , bir hadoop kümesinde büyük veritabanına ev sahipliği yapmaya izin verieri.
@@ -144,7 +144,7 @@ print(sum)
     - Daha sonra hadoop gücü kullanılarak transform işlemi gerçekleştirilir.
 - (casandra facebook un geliştiriği veri tabanıdır.Yatayda sınırsız veri araması ve veri çoksa performans artar.)
 ----------------------------------------------------------------
-** Reinforcement Learninig ** 
+**Reinforcement Learninig** 
 - elifdemirtas.net/2016/08/20/reinforcementlearningnedir/ (hocanın kaynağı)
 - Yukarıdaki adrese bak.
 - Ödül , ceza işlemleriyle ilerlerme olur.
@@ -154,7 +154,7 @@ print(sum)
 - Markov desicion process
 - Dynamiv proggrqimng
 ----------------------------------------------------------------
-** Bias/ varyans ikilemi **
+**Bias/ varyans ikilemi**
 - Bir modelin genellleştirme hatası 3 farklı hatanın toplamı şeklinde ifade edilir.
 1. Yanlılık(bias)
 2. Varyans
