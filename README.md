@@ -3,7 +3,17 @@
 ### 19 kasım (vize sonrası 1. hafta)
 ------------------------------------
 **KNN (k neast neighbor)**
-## How To Run
+- Uzaklıklara dayalı olarak veri noktaları sınıflandırmaya yarar. 
+- En çok kulllanılan öklik algoritmasıdır. manhatton diyede bir algoritma vardır.
+- k değeri hangi sınıfa dahil olacağını belli eder.
+- Supervised  learning  modeldir. 
+
+
+
+
+
+
+## kodun başlığını yazmalıyım 
 ```bash
 import pandas as pd #cvs dosyalarını okumak içn.
 import numpy as np
