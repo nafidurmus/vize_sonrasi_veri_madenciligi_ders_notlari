@@ -253,8 +253,13 @@ X = mn_X.fit_transform(X)
 #veride bulunan aşırı değerler verilen isim.
 #bunların veriden ayrılması gerekir
 #bir kullanıcı çok film oylarsa bu herkesin oylarını etkileyebilir.
+```
+- Outliers 
+- Veride bulunan aşırı değerler verilen isim.
+- Bunların veriden ayrılması gerekir
+- Bir kullanıcı çok film oylarsa bu herkesin oylarını etkileyebilir.
 
-*******************************************************************************************
+```bash
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -276,6 +281,4 @@ filtered = outlierCikar(gelirler)
 plt.hist(filtered,50)
 plt.show()
 ```
-
-
 ----------------------------------------------------------------------------------------------------------
