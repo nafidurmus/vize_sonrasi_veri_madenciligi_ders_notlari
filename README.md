@@ -111,9 +111,171 @@ print(sum)
 #### devamını hoca gönderecek
 ----------------------------------------------------------------------------------------------------------
 ### 26 kasım (vize sonrası 2. hafta)
-**Bu hafta ders olmadı.
+------------------------------------
+** Bu hafta ders olmadı. **
 ----------------------------------------------------------------------------------------------------------
 ### 3 aralık (vize sonrası 3. hafta)
+------------------------------------
+** Data Warehousing(Veri Ambarı) **
+- Büyük veri merkezindeki veri tabanındaki bir çok kaynaktan veriler bulunur.
+- "sql" ve "tsbleau" kullanılır sorgular için.(tableau verileri görsellleştirmek için kullanılıır.)
+- Veri kaynaklarnı sürekli kılmak çok iş ve emek ister.
+- Genellikle tüm depertmenlar da  biri veri ambarı bakımı yapmakla görevlidir.
+- Büyük şirletler sık sık kullanır.
+- Ölçeklendirme zor.
+- Analiz edilecek verilerin aktarıldığı yerdir veri ambarı.
+-----------------------------------------------------------
+** ETL Extract, Transform , Load(klasik yaklaşım) **
+- ETL ve ELT verilerin bir veri ambarı içerisinden nasıl geldiğini ifade eder.
+- ETL geleneksel(klasik yaklaşım) dir.
+- Operasyonlar sistemlerde gelen ham verileri periyodik olarak çıkarmak.
+- Veriler veri ambarı tarafından ihtiyaç duyulan şemaya dönüştürür.
+- Son olarak dönüştürülen veriler şemaya dönüştürür.
+- Büyük verilerde dünüştürme işlemi büyük bir soruna dönüşebilir.
+---------------------------------------------------------------
+** ELT extract load transfırm(günümüzde çok fazla veri varsa kulanılandır.) **
+- Big data için tek seçenek oracle değildir.
+- Büyük verilerde işlem yaparken kırılganlığı(yablış yazmış olabilirim :D) önlemek için kullanılır.
+- Hive gibi teknolojiler , bir hadoop kümesinde büyük veritabanına ev sahipliği yapmaya izin verieri.
+- Büyük dağınık veriler nosql de saklanabilir. Spark veya mapreduce gibi teknolojilerle sorgulanabilirler.
+- Hadoop un ölçeklenebilirliği, yükleme işleminde ona atmaya sağlar.
+    - Önce ham veri extract edilir.
+    - Sonra yüklenir.
+    - Daha sonra hadoop gücü kullanılarak transform işlemi gerçekleştirilir.
+- (casandra facebook un geliştiriği veri tabanıdır.Yatayda sınırsız veri araması ve veri çoksa performans artar.)
+----------------------------------------------------------------
+** Reinforcement Learninig ** 
+- elifdemirtas.net/2016/08/20/reinforcementlearningnedir/ (hocanın kaynağı)
+- Yukarıdaki adrese bak.
+- Ödül , ceza işlemleriyle ilerlerme olur.
+- Pacmen ve kedi-fare oyununda kullanılır. ilk öğrenir sonra uygular.
+--Algoritmalar--
+- Q-learninig
+- Markov desicion process
+- Dynamiv proggrqimng
+----------------------------------------------------------------
+** Bias/ varyans ikilemi **
+- Bir modelin genellleştirme hatası 3 farklı hatanın toplamı şeklinde ifade edilir.
+1. Yanlılık(bias)
+2. Varyans
+3. İndirgenemez hata
+-------------------
+**Bias** = bias modelinin ne kadar yanlş olduğunu ölçer. Örneğin veri ikinci dereceden bir polinom iken verinin lineer 
+olduğunu varsaymak gibi. bias, modelin problemin çözümünü içermediğini gösterir.modelin zayof kaldığı bu durımda eksik öğrenme (under fitting) denir. yüksek biansa sahip modelin , eğitin verisini eksik öğrenme olasılığı fazladır.
+
+**Varyans** = modelin tahmin ettiği verinin , gerçek verilein etrafında nasıl saçıldığını ölçer. varyns modelinin eğitim verisindeki düşük değişimlerdir.fazla veri varsa overfittingdir.
+
+**İndirgenemez hata** = buraları dolduralım :D
+- Bir modelin karmaşıklığını arttırmak , varyansını arttırır ve yanlılığını azaltır. Aksine , bir modelin karmaşılığını azaltmak, yanlılığı artırır ve varyansnı azaltır.(ikisininde normal olduğu en iyi durumdır.)
+---------------------------------------------
+** Kfold cross validation **
+- Overfittingten kaçınmak için kullanılan bir yÖndemdir.
+-------------------------------------------------
+## Derste yazdığımız kod parçası
+```bash
+import numpy as np
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn import datasets #iris  verisine erişmek için.
+from sklearn import svm
+
+iris = datasets.load_iris()
+
+X_train , X_test, Y_train, Y_test = train_test_split(iris.data,
+                                                     iris.target, test_size=0.4,
+                                                     random_state=0)
+# test_size = 0.4 elimizdeki verinin %40 ını test verisi için kullanacağımızı belittiik.
+Başka kod yok ya bende :D
+```
+
 ----------------------------------------------------------------------------------------------------------
 ### 10 aralık (vize sonrası 4. hafta)
+------------------------------------
+** Veri Önizlemesi **
+---------------------
+```bash
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+dataSet = pd.read_csv('Data.csv')
+
+#girsi çıktı değişkenleri vardır.,
+X = dataSet.iloc[:,:-1].values #son kalan haric hepsini al
+y = dataSet.iloc[:, -1].values #son kalan değeri aldık
+
+#missing data
+#age ve salary alannlarında iki eksik bilgi var 
+#-eksik olnalar silinebilir.
+# -oratlaam ya da medyanla doldurabiliriz.
+
+#eksik veriler
+from sklearn.preprocessing import Imputer
+
+imputer =Imputer(missing_values='NaN',  #kayop verilerin nasıl oluştuğunu yazarız
+                 strategy='mean', #most_frequery en çok tekrar eden alınır yazarsak strategy ye
+                 axis=0) #eksik veri de 0 ises sütun , 1 ise satır buyunca bakarız.
+
+imputer = imputer.fit(X[:, 1:3]) #3 sütünu almaz.
+X[:, 1:3] = imputer.transform(X[:, 1:3])
+
+#catagorik değişkenler
+#bazı makine öğrenmeleri sade saısal basıları sözel verilerle çalışır.
+#burada country ve purchased alanları mevcut.
+
+#encode categorical data
+from sklearn.preprocessing import LabelEncoder
+labelEncode_X = LabelEncoder() #laberlerncoderden nesne oluşturduk.
+X[:,0] = labelEncode_X.fit_transform(X[:,0]) # ülke isimlerine sağısal bir değer verdik..
+
+#değerler rasgelr değerlerin bi önemi yok algoritmaya bunu anlatmamız lazım.
+
+#dummy encoding
+from sklearn.preprocessing import OneHotEncoder
+oneHotEncoder = OneHotEncoder(categorical_features=[0])
+X = oneHotEncoder.fit_transform(X).toarray()
+
+#feature scalling
+#ekimizdeki veriler belli bir aralığa getirmek.
+#satandardisation , normalisation olamk üzer iki yöntem vardır. bunların formülleri vardı :D
+
+#standartition
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X = sc_X.fit_transform(X)
+
+#minmax 0 1 araında normaliza ememize yarar.
+from sklearn.preprocessing import MinMaxScaler
+mn_X = MinMaxScaler()
+X = mn_X.fit_transform(X)
+
+
+#outliers 
+#veride bulunan aşırı değerler verilen isim.
+#bunların veriden ayrılması gerekir
+#bir kullanıcı çok film oylarsa bu herkesin oylarını etkileyebilir.
+
+*******************************************************************************************
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+gelirler = np.random.normal(27000,15000,10000) #¢fver,i oluşturduk.
+gelirler = np.append(gelirler, [1000000000])
+plt.hist(gelirler,50) # histogram grafiği çizdirdik.
+plt.show() # ekranda gösterdik.
+
+# -3 +3 standart sapma 
+def  outlierCikar(data):
+    o = np.median(data)
+    s = np.std(data)
+    filtered = [veri for veri in data
+                if (o - 2 * s < veri < o + 2 * s)]
+    return filtered
+
+filtered = outlierCikar(gelirler)
+plt.hist(filtered,50)
+plt.show()
+```
+
+
 ----------------------------------------------------------------------------------------------------------
