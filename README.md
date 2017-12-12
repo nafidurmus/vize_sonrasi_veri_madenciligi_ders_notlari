@@ -7,6 +7,8 @@
 - En çok kulllanılan öklik algoritmasıdır. manhatton diyede bir algoritma vardır.
 - k değeri hangi sınıfa dahil olacağını belli eder.
 - Supervised  learning  modeldir. 
+------------------------------------
+-- rstrip('\n') : aradaki boşlukları temizler.
 
 
 
