@@ -13,7 +13,7 @@
 ------------------------------------
 **Dimensionality Reduction**
 - Boyutun önemi nedir ?
-    - Bir çok problemin boyut sayısının çok oldğu düşünülebilmektedir.
+    - Bir çok problemin boyut sayısının çok olduğu düşünülebilmektedir.
  ------------------------------------
  **K-means**
 - Bu bir boyut azaltma örneğidir.
@@ -108,7 +108,8 @@ X_pca = pca.transform(X)
 print(pca.explained_variance_ratio_)
 print(sum)
 ```
-
+#### devamını hoca gönderecek
+----------------------------------------------------------------------------------------------------------
 
 
 ### 26 kasım (vize sonrası 2. hafta)
