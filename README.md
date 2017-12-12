@@ -8,14 +8,22 @@
 - k değeri hangi sınıfa dahil olacağını belli eder.
 - Supervised  learning  modeldir. 
 ------------------------------------
--- rstrip('\n') : aradaki boşlukları temizler.
+- rstrip('\n') : aradaki boşlukları temizler.
+- map : şurdaki verileri şurdaki verilere uygula. gendes = map (int, gendes)  gibidir kullanımı.
+------------------------------------
+**Dimensionality Reduction**
+- Boyutun önemi nedir ?
+        * Bir çok problemin boyut sayısının çok oldğu düşünülebilmektedir.
+ ------------------------------------
+ **K-means**
+- Bu bir boyut azaltma örneğidir.
+- Burada data k boyuta indirgenmiştir.
+ **Principal Component Analysis**
+- Yüz tanıma , boyut indirme de kullanılır.
+**4D ıris flowera verilerin görselleştirlmesi**
+- Scikit learn ile kullanılır.
 
-
-
-
-
-
-## kodun başlığını yazmalıyım 
+## Derste yazdığımız kod parçası
 ```bash
 import pandas as pd #cvs dosyalarını okumak içn.
 import numpy as np
