@@ -13,7 +13,7 @@
 ------------------------------------
 **Dimensionality Reduction**
 - Boyutun önemi nedir ?
-        * Bir çok problemin boyut sayısının çok oldğu düşünülebilmektedir.
+    - Bir çok problemin boyut sayısının çok oldğu düşünülebilmektedir.
  ------------------------------------
  **K-means**
 - Bu bir boyut azaltma örneğidir.
