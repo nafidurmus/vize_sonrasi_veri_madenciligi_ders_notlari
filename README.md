@@ -112,7 +112,7 @@ print(sum)
 ----------------------------------------------------------------------------------------------------------
 ### 26 kasım (vize sonrası 2. hafta)
 ------------------------------------
-** Bu hafta ders olmadı. **
+**Bu hafta ders olmadı.**
 ----------------------------------------------------------------------------------------------------------
 ### 3 aralık (vize sonrası 3. hafta)
 ------------------------------------
@@ -168,7 +168,7 @@ olduğunu varsaymak gibi. bias, modelin problemin çözümünü içermediğini g
 **İndirgenemez hata** = buraları dolduralım :D
 - Bir modelin karmaşıklığını arttırmak , varyansını arttırır ve yanlılığını azaltır. Aksine , bir modelin karmaşılığını azaltmak, yanlılığı artırır ve varyansnı azaltır.(ikisininde normal olduğu en iyi durumdır.)
 ---------------------------------------------
-** Kfold cross validation **
+**Kfold cross validation**
 - Overfittingten kaçınmak için kullanılan bir yÖndemdir.
 -------------------------------------------------
 ## Derste yazdığımız kod parçası
