@@ -24,7 +24,7 @@
 - Yüksek düzeyde matematik içerir.
  **Principal Component Analysis**
 - Yüz tanıma , boyut indirme de kullanılır.
-**4D ıris flowera verilerin görselleştirlmesi**
+## 4D ıris flowera verilerin görselleştirlmesi ##
 - Scikit learn ile kullanılır.
 - Iris veri seti scikit_learn ile birlikte gelir.
 - İris çiçeği sepals ve petalslere sahiptir.
@@ -33,6 +33,7 @@
 
 ## Derste yazdığımız kod parçası
 ```bash
+** dersteki örnek 1 **
 import pandas as pd #cvs dosyalarını okumak içn.
 import numpy as np
 
@@ -54,11 +55,11 @@ with open ('/home/nafi/Desktop/3.sınıf_1.dönem/veri_madeniliği/7.hafta/u.ite
            encoding= 'latin-1') as f:
     temp = ''
     for line in f:
-        fields = line.rstrip('\n').split('|')
+        fields = line.rstrip('\n').split('|') #rstrip('\n') içindeki \n 'leri siler
         movie_id = int(fields[0])
         name = fields[1] #isimlerin olduğu sütünu alır.
         genres = fields[5:25] #5 den 25 sutuna kadar olan değerleri alır.
-        genres = map(int,genres)
+        genres = map(int,genres) #map(x,y) x'deki verileri y'deki verilere uygula
         movieDict[movie_id] = (name, np.array(list(genres)),
                  normRatings.loc[movie_id].get('size'),
                  grup.loc[movie_id].rating.get('mean'))
@@ -66,6 +67,8 @@ with open ('/home/nafi/Desktop/3.sınıf_1.dönem/veri_madeniliği/7.hafta/u.ite
 from scipy import spatial
 import operator    
 
+## İki film arasındaki uzaklığı bulan fonksiyon
+ 
 def computeDistance(a,b):
     genresA = a[1]
     genresB = b[1]
@@ -97,6 +100,7 @@ for neighbor in neighbors:
     
 avRating /=K
 
+** dersteki örnek 2 **
 
 from sklearn.datasets import load_iris
 from sklearn.decomposition import PCA
@@ -113,8 +117,15 @@ X = iris.data
 pca = PCA(n_components=2, whiten=True) fit(X) #2 componenete göre listeledik
 X_pca = pca.transform(X)
 
+#print(pca. components)
 print(pca.explained_variance_ratio_)
-print(sum)
+print(sum(pca.explained_variance_ratio_))
+
+from pylab import *
+
+columns = cycle('rgb')
+target_ids = range(len(iris.target_names))
+pl.figure
 ```
 #### devamını hoca gönderecek
 #### //Ödev : Scikitlearn ile sınıflandırma örneği.
