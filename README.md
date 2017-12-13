@@ -22,7 +22,7 @@
 - Bu bir boyut azaltma örneğidir.
 - Burada data k boyuta indirgenmiştir.
 - Yüksek düzeyde matematik içerir.
- **Principal Component Analysis**
+ ** Principal Component Analysis **
 - Yüz tanıma , boyut indirme de kullanılır.
 ## 4D ıris flowera verilerin görselleştirlmesi ##
 - Scikit learn ile kullanılır.
