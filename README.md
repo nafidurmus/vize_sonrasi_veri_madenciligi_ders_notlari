@@ -212,9 +212,20 @@ X_train , X_test, Y_train, Y_test = train_test_split(iris.data,
                                                      iris.target, test_size=0.4,
                                                      random_state=0)
 # test_size = 0.4 elimizdeki verinin %40 ını test verisi için kullanacağımızı belittiik.
-Başka kod yok ya bende :D
-```
+(Aşağı tarafı erimden aldım :D bende yoktu :) )
 
+model = svm.SVC(kernel = 'linear', C=1).fit(X_train, y_train)
+model.score(X_test, y_test)
+sonuc = cross_val_score(model, iris.data, iris.target, cv=5)
+print(sonuc)
+print(sonuc.mean())
+
+model = svm.SVC(kernel = 'poly', C=1).fit(X_train, y_train)
+sonuc = cross_val_score(model, iris.data, iris.target, cv= 5)
+print(sonuc)
+print(sonuc.mean())
+```
+## ödev : Veri setini 5 e böl,her defasında birini eğitim,ötekileri veri seti olarak seçip sonuç bul bu sonuçların ortalamasını al
 ----------------------------------------------------------------------------------------------------------
 ### 10 aralık (vize sonrası 4. hafta)
 ------------------------------------
