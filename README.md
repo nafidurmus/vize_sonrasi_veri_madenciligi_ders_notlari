@@ -22,14 +22,14 @@
 - Bu bir boyut azaltma örneğidir.
 - Burada data k boyuta indirgenmiştir.
 - Yüksek düzeyde matematik içerir.
- **Principal Component Analysis**
-- Yüz tanıma , boyut indirme de kullanılır.
-**4D ıris flowera verilerin görselleştirlmesi**
-- Scikit learn ile kullanılır.
-- Iris veri seti scikit_learn ile birlikte gelir.
-- İris çiçeği sepals ve petalslere sahiptir.
-- Birçok iris örnepği için sepals ve petalslerin uzunluğu ve genişliği bilinir.
-- PCA bunu 4 yerine 2 boyutta görselleştirmeye izin verir.
+    - **Principal Component Analysis**
+        - Yüz tanıma , boyut indirme de kullanılır.
+    - **4D ıris flowera verilerin görselleştirlmesi**
+        - Scikit learn ile kullanılır.
+        - Iris veri seti scikit_learn ile birlikte gelir.
+        - İris çiçeği sepals ve petalslere sahiptir.
+        - Birçok iris örnepği için sepals ve petalslerin uzunluğu ve genişliği bilinir.
+        - PCA bunu 4 yerine 2 boyutta görselleştirmeye izin verir.
 
 ## Derste yazdığımız kod parçası
 ```bash
