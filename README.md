@@ -3,6 +3,7 @@
 ### 19 kasım (vize sonrası 1. hafta)
 ------------------------------------
 **KNN (k neast neighbor)**
+- Bilinen verilerin uzaklıklarına dayalı olarak yeni veri noktalarını sınıflandırmak için kullanılır.
 - Uzaklıklara dayalı olarak veri noktaları sınıflandırmaya yarar. 
 - En çok kulllanılan öklik algoritmasıdır. manhatton diyede bir algoritma vardır.
 - k değeri hangi sınıfa dahil olacağını belli eder.
@@ -13,15 +14,22 @@
 ------------------------------------
 **Dimensionality Reduction**
 - Boyutun önemi nedir ?
+- Boyutun kütüğü nedir? **// erim kütüğü ne demek ?**
     - Bir çok problemin boyut sayısının çok olduğu düşünülebilmektedir.
+- Örneğin film tavsiye ederken her filmin kendi boyutuna sahiptir.Her bir film için derecelendirme vektörüdür.   
  ------------------------------------
  **K-means**
 - Bu bir boyut azaltma örneğidir.
 - Burada data k boyuta indirgenmiştir.
+- Yüksek düzeyde matematik içerir.
  **Principal Component Analysis**
 - Yüz tanıma , boyut indirme de kullanılır.
 **4D ıris flowera verilerin görselleştirlmesi**
 - Scikit learn ile kullanılır.
+- Iris veri seti scikit_learn ile birlikte gelir.
+- İris çiçeği sepals ve petalslere sahiptir.
+- Birçok iris örnepği için sepals ve petalslerin uzunluğu ve genişliği bilinir.
+- PCA bunu 4 yerine 2 boyutta görselleştirmeye izin verir.
 
 ## Derste yazdığımız kod parçası
 ```bash
@@ -109,6 +117,7 @@ print(pca.explained_variance_ratio_)
 print(sum)
 ```
 #### devamını hoca gönderecek
+#### //Ödev : Scikitlearn ile sınıflandırma örneği.
 ----------------------------------------------------------------------------------------------------------
 ### 26 kasım (vize sonrası 2. hafta)
 ------------------------------------
