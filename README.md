@@ -144,13 +144,17 @@ pl.figure
 - Büyük şirletler sık sık kullanır.
 - Ölçeklendirme zor.
 - Analiz edilecek verilerin aktarıldığı yerdir veri ambarı.
+- Veri Normalizasyonu zordur
+- Tüm veriler birbiri ile nasıl ilişkiye sahiptir? 
+- İnsanlar nasıl görüşlere ihtiyaç duyuyor?
+- Veri kaynaklarını sürekli kılmak çok iş ve emek gerektirir
 -----------------------------------------------------------
 **ETL Extract, Transform , Load(klasik yaklaşım)**
 - ETL ve ELT verilerin bir veri ambarı içerisinden nasıl geldiğini ifade eder.
 - ETL geleneksel(klasik yaklaşım) dir.
 - Operasyonlar sistemlerde gelen ham verileri periyodik olarak çıkarmak.
 - Veriler veri ambarı tarafından ihtiyaç duyulan şemaya dönüştürür.
-- Son olarak dönüştürülen veriler şemaya dönüştürür.
+- Son olarak dönüştürülen veriler veri ambarına yüklenir..
 - Büyük verilerde dünüştürme işlemi büyük bir soruna dönüşebilir.
 ---------------------------------------------------------------
 **ELT extract load transfırm(günümüzde çok fazla veri varsa kulanılandır.)**
@@ -165,6 +169,7 @@ pl.figure
 - (casandra facebook un geliştiriği veri tabanıdır.Yatayda sınırsız veri araması ve veri çoksa performans artar.)
 ----------------------------------------------------------------
 **Reinforcement Learninig** 
+- Reinforcement Learning,Machine Learning'in ........ hesaba dayalı yaklaşımlar oluşturulmuştur.
 - elifdemirtas.net/2016/08/20/reinforcementlearningnedir/ (hocanın kaynağı)
 - Yukarıdaki adrese bak.
 - Ödül , ceza işlemleriyle ilerlerme olur.
@@ -174,18 +179,21 @@ pl.figure
 - Markov desicion process
 - Dynamiv proggrqimng
 ----------------------------------------------------------------
-**Bias/ varyans ikilemi**
+**Bias/ varyans ikilemi(Bias / Variance Tradeoff)**
 - Bir modelin genellleştirme hatası 3 farklı hatanın toplamı şeklinde ifade edilir.
 1. Yanlılık(bias)
 2. Varyans
 3. İndirgenemez hata
 -------------------
+---------------------
+Açıklamalar için (https://makineögrenimi.wordpress.com/2017/05/30/yanlilikvaryans-ikilemi-biasvariance-tradeoff/) bi bak istersen.
+---------------------
 **Bias** = bias modelinin ne kadar yanlş olduğunu ölçer. Örneğin veri ikinci dereceden bir polinom iken verinin lineer 
 olduğunu varsaymak gibi. bias, modelin problemin çözümünü içermediğini gösterir.modelin zayof kaldığı bu durımda eksik öğrenme (under fitting) denir. yüksek biansa sahip modelin , eğitin verisini eksik öğrenme olasılığı fazladır.
 
 **Varyans** = modelin tahmin ettiği verinin , gerçek verilein etrafında nasıl saçıldığını ölçer. varyns modelinin eğitim verisindeki düşük değişimlerdir.fazla veri varsa overfittingdir.
 
-**İndirgenemez hata** = buraları dolduralım :D
+**İndirgenemez hata** = Verideki gürültülere bağlıdır.Bu hatayı azaltmanın tek yolu, veriyi temizlemektir.
 - Bir modelin karmaşıklığını arttırmak , varyansını arttırır ve yanlılığını azaltır. Aksine , bir modelin karmaşılığını azaltmak, yanlılığı artırır ve varyansnı azaltır.(ikisininde normal olduğu en iyi durumdır.)
 ---------------------------------------------
 **Kfold cross validation**
