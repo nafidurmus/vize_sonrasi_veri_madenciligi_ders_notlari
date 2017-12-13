@@ -230,6 +230,9 @@ print(sonuc.mean())
 ### 10 aralık (vize sonrası 4. hafta)
 ------------------------------------
 **Veri Önizlemesi**
+**Kategorik Değişkenler**
+-------------------------
+- Bazı ML modelleri için kategorik değişkenlerin sayısala dönüştürülmesi gerekebilir.
 ---------------------
 ```bash
 import numpy as np
@@ -245,7 +248,7 @@ y = dataSet.iloc[:, -1].values #son kalan değeri aldık
 #missing data
 #age ve salary alannlarında iki eksik bilgi var 
 #-eksik olnalar silinebilir.
-# -oratlaam ya da medyanla doldurabiliriz.
+# -ortalama ya da medyanla doldurabiliriz.
 
 #eksik veriler
 from sklearn.preprocessing import Imputer
@@ -287,16 +290,12 @@ from sklearn.preprocessing import MinMaxScaler
 mn_X = MinMaxScaler()
 X = mn_X.fit_transform(X)
 
-
-#outliers 
-#veride bulunan aşırı değerler verilen isim.
-#bunların veriden ayrılması gerekir
-#bir kullanıcı çok film oylarsa bu herkesin oylarını etkileyebilir.
 ```
 - Outliers 
-- Veride bulunan aşırı değerler verilen isim.
-- Bunların veriden ayrılması gerekir
+- Veride bulunan aşırı değerlere verilen isimdir.
+- Bunların veriden ayrılması gerekir.
 - Bir kullanıcı çok film oylarsa bu herkesin oylarını etkileyebilir.
+- Örneğin işbirlikçi filtrelemede binlerce filmi değerlendiren tek bir kullanıcı,herkesin oylarını etkileyebilir.Bu durum istenmez.Web log verilerinde botlar ve diğer ajanlar aykırı verileri temsil edebilir.
 
 ```bash
 import numpy as np
