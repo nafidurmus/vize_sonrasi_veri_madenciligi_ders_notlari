@@ -14,7 +14,7 @@
 ------------------------------------
 **Dimensionality Reduction**
 - Boyutun önemi nedir ?
-- Boyutun kütüğü nedir? **// erim kütüğü ne demek ?**
+- Boyutun kütüğü nedir? 
     - Bir çok problemin boyut sayısının çok olduğu düşünülebilmektedir.
 - Örneğin film tavsiye ederken her filmin kendi boyutuna sahiptir.Her bir film için derecelendirme vektörüdür.   
  ------------------------------------
